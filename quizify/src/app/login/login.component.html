@@ -1,0 +1,19 @@
+<div>
+  <h2>Se connecter</h2>
+
+  <form (ngSubmit)="signIn()">
+    <div>
+      <label for="email">Email :</label>
+      <input #email type="email" placeholder="Email" required />
+    </div>
+
+    <div>
+      <label for="password">Mot de passe :</label>
+      <input #password type="password" placeholder="Mot de passe" required />
+    </div>
+
+    <button type="submit">Se connecter</button>
+    <button (click)="signUp(email, password)">S'inscrire</button>
+    <button (click)="signOut()">Se déconnecter</button>
+  </form>
+</div>
