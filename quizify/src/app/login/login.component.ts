@@ -1,25 +1,27 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';  // Importation des classes nécessaires
+import { Component } from '@angular/core';  // Importation du décorateur Component
+import { CommonModule } from '@angular/common';  // Pour utiliser *ngIf et autres directives
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';  // Importation des classes nécessaires
 import { AuthService } from '../auth/auth.service';  // Assurez-vous que le chemin est correct
-import { CommonModule } from '@angular/common';  // Importation de CommonModule pour *ngIf et autres directives
-import { ReactiveFormsModule } from '@angular/forms'; // Pour les formulaires réactifs
+
 @Component({
   selector: 'app-login',
+  standalone: true,  // Si tu utilises un composant autonome
+  imports: [CommonModule, ReactiveFormsModule],  // Ajoute CommonModule et ReactiveFormsModule
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginForm: FormGroup;  // Déclaration du formulaire réactif
+  loginForm: FormGroup;
 
+  // Injection de FormBuilder dans le constructeur
   constructor(private fb: FormBuilder, private authService: AuthService) {
-    // Création du formulaire réactif avec des validations
+    // Initialisation du formulaire réactif avec des validations
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],  // Validation de l'email
-      password: ['', [Validators.required, Validators.minLength(6)]]  // Validation du mot de passe
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
-  // Méthode pour l'inscription
   signUp() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
@@ -29,7 +31,6 @@ export class LoginComponent {
     }
   }
 
-  // Méthode pour la connexion
   signIn() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
@@ -39,12 +40,10 @@ export class LoginComponent {
     }
   }
 
-  // Méthode pour la déconnexion
   signOut() {
     this.authService.signOut();
   }
 
-  // Accès aux contrôles du formulaire pour la validation
   get email() {
     return this.loginForm.get('email');
   }
