@@ -8,12 +8,9 @@ import { environment } from '../environments/environment';
 
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
-
-import { ReactiveFormsModule } from '@angular/forms';  // Pour utiliser Reactive Forms
-import { FormsModule } from '@angular/forms';
-
+import { NgModel, ReactiveFormsModule } from '@angular/forms';  // Pour utiliser Reactive Forms
 import { LoginComponent } from './login/login.component';
-
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +18,18 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase), 
+    AngularFireModule.initializeApp(environment.firebaseConfig), 
     AngularFireAuthModule,
     ReactiveFormsModule,
-    FormsModule,
     RouterModule.forRoot(appRoutes), 
+    FormsModule,
+    NgModel
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+
+
+
