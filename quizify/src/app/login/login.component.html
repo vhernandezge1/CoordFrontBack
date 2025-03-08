@@ -21,6 +21,9 @@
       </div>
     </div>
 
+    <!-- Champ caché pour inclure le CSRF token -->
+    <input type="hidden" name="csrf_token" [value]="csrfToken" />
+
     <div style="display: flex; justify-content: space-between;">
       <button type="submit" [disabled]="loginForm.invalid" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Se connecter</button>
       <button type="button" (click)="signUp()" style="background-color: #2196F3; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">S'inscrire</button>

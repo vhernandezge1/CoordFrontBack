@@ -1,31 +1,50 @@
-import { Component } from '@angular/core';  // Importation du décorateur Component
-import { CommonModule } from '@angular/common';  // Pour utiliser *ngIf et autres directives
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';  // Importation des classes nécessaires
-import { AuthService } from '../auth/auth.service';  // Assurez-vous que le chemin est correct
+import { Component, OnInit, Inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
+import { isPlatformBrowser } from '@angular/common';  // Importer isPlatformBrowser pour vérifier si on est dans le navigateur
+import { PLATFORM_ID } from '@angular/core';  // Importer PLATFORM_ID pour l'injection
 
 @Component({
   selector: 'app-login',
   standalone: true,  // Si tu utilises un composant autonome
-  imports: [CommonModule, ReactiveFormsModule],  // Ajoute CommonModule et ReactiveFormsModule
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  csrfToken: string = '';
 
-  // Injection de FormBuilder dans le constructeur
-  constructor(private fb: FormBuilder, private authService: AuthService) {
-    // Initialisation du formulaire réactif avec des validations
+  // Injection de FormBuilder et PLATFORM_ID pour vérifier l'environnement
+  constructor(
+    private fb: FormBuilder, 
+    private authService: AuthService, 
+    @Inject(PLATFORM_ID) private platformId: Object  // Injecter PLATFORM_ID pour vérifier la plateforme
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
+  ngOnInit() {
+    // Vérifier si on est dans un environnement navigateur avant d'utiliser document
+    if (isPlatformBrowser(this.platformId)) {
+      const csrfMetaTag = document.querySelector('meta[name="csrf-token"]');
+      this.csrfToken = csrfMetaTag ? csrfMetaTag.getAttribute('content') || '' : '';
+  
+      // Afficher le CSRF token dans la console pour vérifier
+      console.log('CSRF Token récupéré:', this.csrfToken);  // Affiche le token dans la console
+    }
+  }
+
+  
+
   signUp() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.authService.signUp(email, password)
+      this.authService.signUp(email, password, this.csrfToken)
         .then(() => console.log('Utilisateur inscrit !'))
         .catch((error) => console.error('Erreur lors de l\'inscription:', error));
     }
@@ -34,7 +53,7 @@ export class LoginComponent {
   signIn() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.authService.signIn(email, password)
+      this.authService.signIn(email, password, this.csrfToken)
         .then(() => console.log('Utilisateur connecté !'))
         .catch((error) => console.error('Erreur lors de la connexion:', error));
     }
