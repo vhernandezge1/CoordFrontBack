@@ -1,14 +1,14 @@
-<!-- Contenu de la page d'accueil -->
-<div style="text-align: center; margin-top: 50px;">
-  <h1>Bienvenue sur mon application Angular !</h1>
-
+<!-- En-tête de l'application -->
+<header>
+  <h1>Bienvenue sur Quizify</h1>
   <nav>
-    <a routerLink="/login" routerLinkActive="active">Connexion </a>
-    <a routerLink="/other" routerLinkActive="active">Autre page</a>
+    <ul>
+      <li><a routerLink="/login" routerLinkActive="active">Se connecter</a></li>
+      <li><a routerLink="/categorie" routerLinkActive="active">Catégories</a></li>
+      <li><a routerLink="/leaderboard" routerLinkActive="active">Leaderboard</a></li>
+    </ul>
   </nav>
+</header>
 
-  <hr />
-  
-  <!-- Affichage du composant lié à la route actuelle -->
-  <router-outlet></router-outlet>
-</div>
+<!-- Contenu de la page d'accueil ou de la page demandée -->
+<router-outlet></router-outlet>

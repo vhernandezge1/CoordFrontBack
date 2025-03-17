@@ -1,0 +1,22 @@
+.categories {
+    text-align: center;
+  }
+  
+  .categories ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .categories li {
+    margin: 10px;
+  }
+  
+  .categories a {
+    text-decoration: none;
+    color: #4CAF50;
+  }
+  
+  .categories a:hover {
+    color: #45a049;
+  }
+  
