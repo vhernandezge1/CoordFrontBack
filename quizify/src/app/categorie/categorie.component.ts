@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  // Importer Router pour naviguer programatiquement
+import { Router } from '@angular/router';  // Importer Router pour naviguer programmatique
 
 @Component({
   selector: 'app-categorie',
@@ -13,6 +13,6 @@ export class CategorieComponent {
 
   // Méthode pour naviguer vers le quiz d'une catégorie
   navigateToQuiz(category: string) {
-    this.router.navigate(['/quiz', category]);  // Navigation programmatique
+    this.router.navigate(['/quiz', category]);  // Redirection vers /quiz/:category
   }
 }

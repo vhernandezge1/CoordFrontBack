@@ -1,22 +1,62 @@
+/* Ajout de styles globaux */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9; /* Couleur de fond douce */
+  color: #333; /* Texte sombre */
+  margin: 0;
+  padding: 0;
+}
+
 .categories {
-    text-align: center;
-  }
-  
-  .categories ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .categories li {
-    margin: 10px;
-  }
-  
-  .categories a {
-    text-decoration: none;
-    color: #4CAF50;
-  }
-  
-  .categories a:hover {
-    color: #45a049;
-  }
-  
+  max-width: 600px;  /* Limiter la largeur du contenu */
+  margin: 50px auto; /* Centrer la section */
+  padding: 20px;
+  background-color: white; /* Fond blanc */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée douce */
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #4CAF50;  /* Couleur verte */
+  margin-bottom: 20px;
+}
+
+/* Styliser la liste des catégories */
+ul {
+  list-style-type: none;  /* Supprimer les puces */
+  padding: 0;
+}
+
+li {
+  margin: 10px 0; /* Espacement entre les éléments */
+}
+
+/* Style des liens (comme des boutons) */
+a {
+  display: inline-block; /* Assurez-vous que le lien se comporte comme un bouton */
+  background-color: #4CAF50;  /* Vert */
+  color: white;
+  text-decoration: none; /* Retirer le soulignement */
+  padding: 15px 20px;  /* Ajouter de l'espace autour du texte */
+  border-radius: 5px;  /* Coins arrondis */
+  text-align: center;
+  width: 100%;  /* Occupation pleine largeur */
+  transition: background-color 0.3s ease, transform 0.2s; /* Transition douce */
+}
+
+a:hover {
+  background-color: #45a049; /* Couleur légèrement plus sombre au survol */
+  transform: scale(1.05);  /* Effet de zoom */
+}
+
+a:focus {
+  outline: none;  /* Supprimer le contour par défaut */
+}
+
+/* Ajouter un effet au survol de l'élément <li> */
+li:hover {
+  background-color: #f1f1f1; /* Changer l'arrière-plan des éléments de la liste */
+  border-radius: 5px;
+}

@@ -1,17 +1,9 @@
 <div class="categories">
   <h2>Catégories de Quiz</h2>
   <ul>
-    <li>
-      <a [routerLink]="['/quiz', categories[0]]">{{ categories[0] }}</a>
-    </li>
-    <li>
-      <a [routerLink]="['/quiz', categories[1]]">{{ categories[1] }}</a>
-    </li>
-    <li>
-      <a [routerLink]="['/quiz', categories[2]]">{{ categories[2] }}</a>
-    </li>
-    <li>
-      <a [routerLink]="['/quiz', categories[3]]">{{ categories[3] }}</a>
-    </li>
+    <li><a href="#" (click)="navigateToQuiz(categories[0])">{{ categories[0] }}</a></li>
+    <li><a href="#" (click)="navigateToQuiz(categories[1])">{{ categories[1] }}</a></li>
+    <li><a href="#" (click)="navigateToQuiz(categories[2])">{{ categories[2] }}</a></li>
+    <li><a href="#" (click)="navigateToQuiz(categories[3])">{{ categories[3] }}</a></li>
   </ul>
 </div>
