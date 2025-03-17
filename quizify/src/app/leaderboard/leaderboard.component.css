@@ -1,56 +1,53 @@
-/* Centrage du leaderboard */
+/* Conteneur du leaderboard */
 .leaderboard {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
-/* Titre du leaderboard */
-.leaderboard h2 {
+h2 {
   text-align: center;
   font-size: 28px;
-  color: #4CAF50; /* Couleur verte */
+  color: #4CAF50;
   margin-bottom: 20px;
 }
 
 /* Style du tableau */
 table {
   width: 100%;
-  border-collapse: collapse; /* Supprimer les espaces entre les bordures */
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
   font-size: 18px;
 }
 
-/* Style des cellules du tableau */
-th, td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd; /* Bordure sous chaque ligne */
-}
-
 th {
-  background-color: #f4f4f4; /* Couleur de fond des en-têtes */
-  font-weight: bold;
-  color: #333;
+  background-color: #4CAF50;
+  color: white;
 }
 
+td {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Survol des lignes du tableau */
 tr:hover {
-  background-color: #f1f1f1; /* Couleur de fond au survol d'une ligne */
-  cursor: pointer;
+  background-color: #f2f2f2;
 }
 
-/* Style du rang, avec une couleur différente pour les 1ers, 2èmes et 3èmes */
-td:first-child {
-  font-weight: bold;
-  color: #4CAF50; /* Vert pour le rang */
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #fafafa; /* Couleur de fond alternée pour les lignes impaires */
-}
-
-tbody tr:nth-child(even) {
-  background-color: #ffffff; /* Lignes paires avec un fond blanc */
+/* Message si aucun joueur n'est présent */
+.noPlayers {
+  text-align: center;
+  font-size: 18px;
+  color: #f44336;
+  margin-top: 20px;
 }
