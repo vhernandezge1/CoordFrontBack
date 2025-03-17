@@ -1,18 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  // Importer Router pour naviguer programmatique
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categorie',
   templateUrl: './categorie.component.html',
-  styleUrls: ['./categorie.component.css']
+  styleUrls: ['./categorie.component.css'],
+  imports:[CommonModule]
 })
 export class CategorieComponent {
   categories = ['Mathématiques', 'Histoire', 'Géographie', 'Sciences'];
 
   constructor(private router: Router) {}
 
-  // Méthode pour naviguer vers le quiz d'une catégorie
+  // Naviguer vers la page du quiz de la catégorie sélectionnée
   navigateToQuiz(category: string) {
-    this.router.navigate(['/quiz', category]);  // Redirection vers /quiz/:category
+    this.router.navigate(['/quiz', category]);  // Redirige vers le quiz correspondant
   }
 }

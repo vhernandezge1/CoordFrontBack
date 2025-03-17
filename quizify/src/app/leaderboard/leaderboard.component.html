@@ -1,39 +1,14 @@
 <div class="leaderboard">
   <h2>Leaderboard</h2>
   <table>
-    <thead>
-      <tr>
-        <th>Rang</th>
-        <th>Nom</th>
-        <th>Score</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td> <!-- Rang -->
-        <td>Alice</td>
-        <td>120</td>
-      </tr>
-      <tr>
-        <td>2</td> <!-- Rang -->
-        <td>Bob</td>
-        <td>100</td>
-      </tr>
-      <tr>
-        <td>3</td> <!-- Rang -->
-        <td>Charlie</td>
-        <td>80</td>
-      </tr>
-      <tr>
-        <td>4</td> <!-- Rang -->
-        <td>David</td>
-        <td>95</td>
-      </tr>
-      <tr>
-        <td>5</td> <!-- Rang -->
-        <td>Eve</td>
-        <td>105</td>
-      </tr>
-    </tbody>
+    <tr>
+      <th>Nom</th>
+      <th>Score</th>
+    </tr>
+    <!-- Boucle sur les joueurs avec *ngFor -->
+    <tr *ngFor="let player of leaderboard">
+      <td>{{ player.name }}</td>
+      <td>{{ player.score }}</td>
+    </tr>
   </table>
 </div>

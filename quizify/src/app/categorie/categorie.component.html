@@ -1,9 +1,9 @@
 <div class="categories">
   <h2>Catégories de Quiz</h2>
   <ul>
-    <li><a href="#" (click)="navigateToQuiz(categories[0])">{{ categories[0] }}</a></li>
-    <li><a href="#" (click)="navigateToQuiz(categories[1])">{{ categories[1] }}</a></li>
-    <li><a href="#" (click)="navigateToQuiz(categories[2])">{{ categories[2] }}</a></li>
-    <li><a href="#" (click)="navigateToQuiz(categories[3])">{{ categories[3] }}</a></li>
+    <!-- Afficher chaque catégorie avec *ngFor -->
+    <li *ngFor="let category of categories">
+      <button (click)="navigateToQuiz(category)">{{ category }}</button>
+    </li>
   </ul>
 </div>

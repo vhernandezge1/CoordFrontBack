@@ -1,24 +1,26 @@
 <div class="quiz">
-  <h2>Quiz - {{ category }}</h2>
-  <form (ngSubmit)="submitQuiz()">
-    <div>
-      <label>{{ questions[0].question }}</label>
-      <div>
-        <input type="radio" name="q0" (click)="selectAnswer(0, 'Paris')" /> Paris
-        <input type="radio" name="q0" (click)="selectAnswer(0, 'Londres')" /> Londres
-        <input type="radio" name="q0" (click)="selectAnswer(0, 'Madrid')" /> Madrid
+  <h2 class="quiz-title">Quiz - {{ category }}</h2>
+
+  <form (ngSubmit)="submitQuiz()" class="quiz-form">
+    <!-- Boucle sur les questions avec *ngFor -->
+    <div *ngFor="let question of questions; let i = index" class="question">
+      <label class="question-label">{{ question.question }}</label>
+      <div class="options">
+        <!-- Boucle sur les options de chaque question -->
+        <button *ngFor="let option of question.options" type="button" class="option" (click)="selectAnswer(i, option)" [class.selected]="selectedAnswers[i] === option">
+          {{ option }}
+        </button>
       </div>
     </div>
 
-    <div>
-      <label>{{ questions[1].question }}</label>
-      <div>
-        <input type="radio" name="q1" (click)="selectAnswer(1, '4')" /> 4
-        <input type="radio" name="q1" (click)="selectAnswer(1, '5')" /> 5
-        <input type="radio" name="q1" (click)="selectAnswer(1, '7')" /> 7
-      </div>
+    <!-- Soumettre le quiz -->
+    <div class="submit-btn">
+      <button type="submit" [disabled]="!selectedAnswers[0] || !selectedAnswers[1]">Soumettre</button>
     </div>
-
-    <button type="submit">Soumettre</button>
   </form>
+
+  <!-- Affichage du score -->
+  <div *ngIf="score >= 0" class="score">
+    <p><strong>Votre score :</strong> {{ score }} / {{ questions.length }}</p>
+  </div>
 </div>

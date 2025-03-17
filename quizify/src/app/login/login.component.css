@@ -50,6 +50,13 @@ button[type='button'] {
   background-color: #2196f3;
 }
 
+/* Changer la couleur du bouton "S'inscrire" en rouge */
+button.sinscrire-btn {
+  background-color: #f44336;  /* Rouge */
+  color: white;
+}
+
+/* Pour un bouton de déconnexion */
 .logout-btn {
   background-color: #f44336;
   color: white;
@@ -71,3 +78,4 @@ button[type='button'] {
   justify-content: space-between;
   margin-top: 15px;
 }
+  
