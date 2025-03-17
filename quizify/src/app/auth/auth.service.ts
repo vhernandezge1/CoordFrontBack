@@ -72,6 +72,7 @@ export class AuthService {
         'Authorization': `Bearer ${token}`,  // Ajout du token Firebase dans l'en-tête Authorization
         'X-CSRF-TOKEN': csrfToken  // Ajout du CSRF token dans l'en-tête X-CSRF-TOKEN
       },
+      credentials:'include',
       body: JSON.stringify({ token })  // Corps de la requête avec le token
     })
       .then((response) => response.json())  // Convertir la réponse en JSON
