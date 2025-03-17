@@ -11,10 +11,11 @@ import { appRoutes } from './app.routes';
 import { NgModel, ReactiveFormsModule } from '@angular/forms';  // Pour utiliser Reactive Forms
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent 
+    LoginComponent ,
   ],
   imports: [
     BrowserModule,

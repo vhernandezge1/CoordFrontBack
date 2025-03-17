@@ -63,7 +63,7 @@ export class AuthService {
 
   // Exemple de méthode pour envoyer le token au backend avec CSRF token
   sendTokenToBackend(token: string, csrfToken: string): Promise<any> {
-    const apiUrl = 'http://localhost:8000/login';  // Ton URL backend
+    const apiUrl = 'http://localhost:8000/api/login';  // Ton URL backend
 
     return fetch(apiUrl, {
       method: 'POST',
