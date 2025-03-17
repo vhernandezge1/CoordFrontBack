@@ -1,34 +1,46 @@
-<div style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
-  <h2 style="text-align: center;">Se connecter</h2>
+<div class="login-container">
+  <h2 class="login-title">Se connecter</h2>
 
-  <!-- Formulaire de connexion réactif -->
   <form [formGroup]="loginForm" (ngSubmit)="signIn()">
-    <div style="margin-bottom: 10px;">
+    <div class="form-group">
       <label for="email">Email :</label>
-      <input id="email" type="email" formControlName="email" placeholder="Email" required style="width: 100%; padding: 10px; font-size: 14px;">
-      <div *ngIf="email?.invalid && email?.touched">
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="Entrez votre email"
+        required
+      />
+      <div *ngIf="email?.invalid && email?.touched" class="error-message">
         <small *ngIf="email?.errors?.['required']">L'email est requis.</small>
-        <small *ngIf="email?.errors?.['email']">L'email n'est pas valide.</small>
+        <small *ngIf="email?.errors?.['email']">Email invalide.</small>
       </div>
     </div>
 
-    <div style="margin-bottom: 20px;">
+    <div class="form-group">
       <label for="password">Mot de passe :</label>
-      <input id="password" type="password" formControlName="password" placeholder="Mot de passe" required style="width: 100%; padding: 10px; font-size: 14px;">
-      <div *ngIf="password?.invalid && password?.touched">
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="Entrez votre mot de passe"
+        required
+      />
+      <div *ngIf="password?.invalid && password?.touched" class="error-message">
         <small *ngIf="password?.errors?.['required']">Le mot de passe est requis.</small>
-        <small *ngIf="password?.errors?.['minlength']">Le mot de passe doit contenir au moins 6 caractères.</small>
+        <small *ngIf="password?.errors?.['minlength']">
+          Le mot de passe doit contenir au moins 6 caractères.
+        </small>
       </div>
     </div>
 
-    <!-- Champ caché pour inclure le CSRF token -->
-    <input type="hidden" name="csrf_token" [value]="csrfToken" />
-
-    <div style="display: flex; justify-content: space-between;">
-      <button type="submit" [disabled]="loginForm.invalid" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Se connecter</button>
-      <button type="button" (click)="signUp()" style="background-color: #2196F3; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">S'inscrire</button>
+    <div class="button-container">
+      <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+      <button type="button" (click)="signUp()">S'inscrire</button>
     </div>
   </form>
 
-  <button (click)="signOut()" style="background-color: #f44336; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px;">Se déconnecter</button>
+  <button type="button" (click)="signOut()" class="logout-btn">
+    Se déconnecter
+  </button>
 </div>

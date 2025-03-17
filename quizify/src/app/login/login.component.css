@@ -1,72 +1,73 @@
-/* Container du formulaire */
-div {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  /* Titre du formulaire */
-  h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Champ de formulaire */
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box; /* Pour inclure les bordures dans le calcul de la largeur */
-  }
-  
-  /* Champ de formulaire avec focus */
-  input:focus {
-    border-color: #66afe9;
-    outline: none;
-  }
-  
-  /* Messages d'erreur */
-  small {
-    color: red;
-    font-size: 12px;
-    display: block;
-    margin-top: 5px;
-  }
-  
-  /* Boutons */
-  button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-  
-  button[type="submit"] {
-    background-color: #4CAF50; /* Vert */
-    color: white;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
-  button[type="button"] {
-    background-color: #f44336; /* Rouge */
-    color: white;
-  }
-  
-  button[type="button"]:hover {
-    background-color: #e53935;
-  }
-  
+/* Styles pour la page de connexion */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 48%;
+  padding: 10px;
+  margin: 10px 1%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+button[type='submit'] {
+  background-color: #4caf50;
+}
+
+button[type='button'] {
+  background-color: #2196f3;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
