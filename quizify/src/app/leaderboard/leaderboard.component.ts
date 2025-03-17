@@ -10,7 +10,7 @@ export class LeaderboardComponent {
     { name: 'Alice', score: 120 },
     { name: 'Bob', score: 100 },
     { name: 'Charlie', score: 80 },
+    { name: 'David', score: 95 },
+    { name: 'Eve', score: 105 }
   ];
-
-  constructor() {}
 }

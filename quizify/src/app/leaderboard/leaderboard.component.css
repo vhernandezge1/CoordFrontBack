@@ -1,15 +1,56 @@
+/* Centrage du leaderboard */
+.leaderboard {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+/* Titre du leaderboard */
+.leaderboard h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #4CAF50; /* Couleur verte */
+  margin-bottom: 20px;
+}
+
+/* Style du tableau */
 table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f4f4f4;
-  }
-  
+  width: 100%;
+  border-collapse: collapse; /* Supprimer les espaces entre les bordures */
+  font-size: 18px;
+}
+
+/* Style des cellules du tableau */
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Bordure sous chaque ligne */
+}
+
+th {
+  background-color: #f4f4f4; /* Couleur de fond des en-têtes */
+  font-weight: bold;
+  color: #333;
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Couleur de fond au survol d'une ligne */
+  cursor: pointer;
+}
+
+/* Style du rang, avec une couleur différente pour les 1ers, 2èmes et 3èmes */
+td:first-child {
+  font-weight: bold;
+  color: #4CAF50; /* Vert pour le rang */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fafafa; /* Couleur de fond alternée pour les lignes impaires */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ffffff; /* Lignes paires avec un fond blanc */
+}
