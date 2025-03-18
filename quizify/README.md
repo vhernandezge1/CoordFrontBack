@@ -1,59 +1,36 @@
-# Quizify
+# Projet Quizify
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+## Description
 
-## Development server
+Quizify est un site web de quiz qui permet aux utilisateurs de s'authentifier, de participer à des quiz, de sélectionner des catégories de quiz et de participer à un système de récompenses et de leaderboard entre amis.
 
-To start a local development server, run:
+Le projet est développé avec Angular pour le frontend et Laravel pour le backend, et utilise PostgreSQL pour la gestion de la base de données.
+
+## Prérequis
+
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+
+- [Node.js](https://nodejs.org) (version LTS recommandée)
+- [Angular CLI](https://angular.io/cli) (installation via npm)
+- [Composer](https://getcomposer.org/) pour gérer les dépendances PHP
+- [PHP](https://www.php.net/) (version 7.4 ou supérieure)
+- [PostgreSQL](https://www.postgresql.org/)
+
+## Installation
+
+### 1. Cloner le repository
+
+Clonez le repository sur votre machine locale :
 
 ```bash
+git clone https://github.com/vhernandezge1/CoordFrontBack.git
+cd quizify
+
+Placez vous au niveau du dossier du frontend: 
+
+cd frontend
+npm install
+
+
+lancez le projet
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
