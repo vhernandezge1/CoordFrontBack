@@ -1,29 +1,20 @@
 <div class="leaderboard">
   <h2>Leaderboard</h2>
-
-  <!-- Vérifier s'il y a des joueurs dans le leaderboard -->
-  <div *ngIf="leaderboard.length > 0; else noPlayers">
-    <table>
-      <thead>
-        <tr>
-          <th>Rang</th>
-          <th>Nom</th>
-          <th>Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Utilisation de *ngFor pour afficher chaque joueur -->
-        <tr *ngFor="let player of leaderboard; let i = index">
-          <td>{{ i + 1 }}</td>  <!-- Rang du joueur (1, 2, 3...) -->
-          <td>{{ player.name }}</td> <!-- Nom du joueur -->
-          <td>{{ player.score }}</td> <!-- Score du joueur -->
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Message si aucun joueur n'est présent dans le leaderboard -->
-  <ng-template #noPlayers>
-    <p>Aucun joueur n'a encore participé.</p>
-  </ng-template>
+  <table>
+    <tr>
+      <th>Nom</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+      <td>Alice</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>100</td>
+    </tr>
+    <!-- Autres joueurs ici -->
+  </table>
+  <!-- Bouton pour revenir à la page des catégories -->
+  <button [routerLink]="'/categorie'">Retour aux catégories</button>
 </div>

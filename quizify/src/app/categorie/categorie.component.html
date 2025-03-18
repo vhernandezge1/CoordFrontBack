@@ -1,9 +1,11 @@
 <div class="categories">
   <h2>Catégories de Quiz</h2>
   <ul>
-    <!-- Afficher chaque catégorie avec *ngFor -->
-    <li *ngFor="let category of categories">
-      <button (click)="navigateToQuiz(category)">{{ category }}</button>
-    </li>
+    <li><button [routerLink]="'/quiz/Mathématiques'">Mathématiques</button></li>
+    <li><button [routerLink]="'/quiz/Histoire'">Histoire</button></li>
+    <li><button [routerLink]="'/quiz/Géographie'">Géographie</button></li>
+    <li><button [routerLink]="'/quiz/Sciences'">Sciences</button></li>
   </ul>
+  <!-- Bouton pour revenir au leaderboard -->
+  <button [routerLink]="'/leaderboard'">Voir le leaderboard</button>
 </div>

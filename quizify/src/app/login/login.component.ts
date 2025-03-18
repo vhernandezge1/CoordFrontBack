@@ -4,11 +4,12 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { AuthService } from '../auth/auth.service';
 import { isPlatformBrowser } from '@angular/common';  // Importer isPlatformBrowser pour vérifier si on est dans le navigateur
 import { PLATFORM_ID } from '@angular/core';  // Importer PLATFORM_ID pour l'injection
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,  // Si tu utilises un composant autonome
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule,RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })

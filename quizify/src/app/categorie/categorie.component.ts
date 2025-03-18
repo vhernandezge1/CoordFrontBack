@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-categorie',
   templateUrl: './categorie.component.html',
   styleUrls: ['./categorie.component.css'],
-  imports:[CommonModule]
+  imports:[CommonModule,RouterModule]
 })
 export class CategorieComponent {
   categories = ['Mathématiques', 'Histoire', 'Géographie', 'Sciences'];
