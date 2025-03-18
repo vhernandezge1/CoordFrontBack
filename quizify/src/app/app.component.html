@@ -1,21 +1,21 @@
 <!-- Menu -->
 <nav class="navbar">
   <ul>
-    <li><a routerLink="/login">Se connecter</a></li>
-    <li><a routerLink="/categorie">Catégories</a></li>
-    <li><a routerLink="/leaderboard">Leaderboard</a></li>
+    <li><a [routerLink]="'/login'">Se connecter</a></li> <!-- Se connecter -->
+    <li><a [routerLink]="'/categorie'">Catégories</a></li> <!-- Catégories -->
+    <li><a [routerLink]="'/leaderboard'">Leaderboard</a></li> <!-- Leaderboard -->
   </ul>
 </nav>
 
-<!-- Contenu de l'application (dynamique via router-outlet) -->
-<router-outlet></router-outlet>
+<!-- Contenu de l'application -->
+<router-outlet></router-outlet>  <!-- Zone où le contenu spécifique aux routes sera affiché -->
 
 <!-- Footer -->
 <footer>
   <p>&copy; 2025 MonSiteWeb - Tous droits réservés</p>
   <ul>
-    <li><a routerLink="/privacy-policy">Politique de confidentialité</a></li>
-    <li><a routerLink="/terms-of-service">Conditions d'utilisation</a></li>
-    <li><a routerLink="/contact">Contact</a></li>
+    <li><a [routerLink]="'/privacy-policy'">Politique de confidentialité</a></li>
+    <li><a [routerLink]="'/terms-of-service'">Conditions d'utilisation</a></li>
+    <li><a [routerLink]="'/contact'">Contactez-nous</a></li>
   </ul>
 </footer>
