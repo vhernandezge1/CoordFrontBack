@@ -1,5 +1,20 @@
-/* Style du Menu (Navigation) */
-.navbar {
+/* Assurez-vous que le body et le html occupent toute la hauteur */
+html, body {
+    height: 100%; /* Permet à la page d'occuper toute la hauteur de l'écran */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Conteneur principal (qui occupe tout l'espace disponible) */
+  .main-container {
+    flex: 1; /* Permet au contenu de remplir tout l'espace restant */
+    padding: 20px;
+    overflow: auto; /* Permet d'afficher correctement le contenu si nécessaire */
+  }
+  
+  /* Style du Menu (Navigation) */
+  .navbar {
     background-color: #333;
     padding: 10px;
     text-align: center;
@@ -31,7 +46,7 @@
     color: white;
     padding: 20px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: auto;  /* Ceci fait en sorte que le footer soit toujours en bas */
   }
   
   footer ul {
@@ -53,7 +68,7 @@
     text-decoration: underline;
   }
   
-  /* Style de base pour le contenu */
+  /* Ajoutez un peu de style pour le contenu */
   .router-outlet {
     margin-top: 20px;
   }
