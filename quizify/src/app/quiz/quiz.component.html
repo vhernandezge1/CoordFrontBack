@@ -1,7 +1,7 @@
 <div class="quiz">
   <h2 class="quiz-title">Quiz - {{ category }}</h2>
 
-  <form (ngSubmit)="submitQuiz()" class="quiz-form">
+  <form class="quiz-form">
     <!-- Boucle sur les questions avec *ngFor -->
     <div *ngFor="let question of questions; let i = index" class="question">
       <label class="question-label">{{ question.question }}</label>
@@ -11,11 +11,6 @@
           {{ option }}
         </button>
       </div>
-    </div>
-
-    <!-- Soumettre le quiz -->
-    <div class="submit-btn">
-      <button type="submit" [disabled]="!selectedAnswers[0] || !selectedAnswers[1]">Soumettre</button>
     </div>
   </form>
 
