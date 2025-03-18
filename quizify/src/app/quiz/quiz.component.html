@@ -19,8 +19,16 @@
     </div>
   </form>
 
+  <!-- Fenêtre modale -->
+  <div *ngIf="isModalVisible" class="modal-overlay">
+    <div class="modal-content">
+      <p>{{ modalMessage }}</p>
+      <button (click)="closeModal()">Fermer</button>
+    </div>
+  </div>
+
   <!-- Affichage du score -->
-  <div *ngIf="score >= 0" class="score">
+  <div class="score">
     <p><strong>Votre score :</strong> {{ score }} / {{ questions.length }}</p>
   </div>
 </div>

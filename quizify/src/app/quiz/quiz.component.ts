@@ -13,13 +13,14 @@ export class QuizComponent implements OnInit {
   questions: { question: string, options: string[], answer: string }[] = [];
   selectedAnswers: { [key: number]: string } = {};  // Pour stocker les réponses sélectionnées
   score: number = 0;  // Score de l'utilisateur
+  isModalVisible: boolean = false;  // Contrôler l'affichage de la fenêtre modale
+  modalMessage: string = '';  // Message de la fenêtre modale
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Récupérer la catégorie de la route (paramètre)
     this.route.params.subscribe(params => {
-      this.category = params['category'];  // La catégorie est récupérée depuis l'URL
+      this.category = params['category'];  // Récupérer la catégorie depuis l'URL
       this.loadQuestions();  // Charger les questions après avoir récupéré la catégorie
     });
   }
@@ -52,6 +53,20 @@ export class QuizComponent implements OnInit {
   // Méthode pour sélectionner une réponse
   selectAnswer(questionIndex: number, answer: string) {
     this.selectedAnswers[questionIndex] = answer;  // Sauvegarde de la réponse choisie
+
+    // Vérifier si la réponse est correcte ou non
+    if (this.questions[questionIndex].answer === answer) {
+      this.modalMessage = 'Bonne réponse !';  // Message de succès
+    } else {
+      this.modalMessage = 'Mauvaise réponse !';  // Message d'erreur
+    }
+
+    this.isModalVisible = true;  // Afficher la fenêtre modale
+  }
+
+  // Méthode pour fermer la fenêtre modale
+  closeModal() {
+    this.isModalVisible = false;
   }
 
   // Méthode pour soumettre le quiz et calculer le score

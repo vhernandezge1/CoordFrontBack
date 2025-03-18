@@ -1,22 +1,37 @@
-.quiz {
-    text-align: center;
-  }
-  
-  .quiz form {
-    display: inline-block;
-    margin-top: 20px;
-  }
-  
-  .quiz button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .quiz button:hover {
-    background-color: #45a049;
-  }
-  
+/* Fenêtre modale */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);  /* Couleur d'arrière-plan semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;  /* Assurez-vous que la fenêtre modale est au-dessus des autres éléments */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  font-size: 18px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.modal-content button:hover {
+  background-color: #45a049;
+}
