@@ -1,14 +1,21 @@
-<!-- En-tête de l'application -->
-<header>
-  <h1>Bienvenue sur Quizify</h1>
-  <nav>
-    <ul>
-      <li><a routerLink="/login" routerLinkActive="active">Se connecter</a></li>
-      <li><a routerLink="/categorie" routerLinkActive="active">Catégories</a></li>
-      <li><a routerLink="/leaderboard" routerLinkActive="active">Leaderboard</a></li>
-    </ul>
-  </nav>
-</header>
+<!-- Menu -->
+<nav class="navbar">
+  <ul>
+    <li><a routerLink="/login">Se connecter</a></li>
+    <li><a routerLink="/categorie">Catégories</a></li>
+    <li><a routerLink="/leaderboard">Leaderboard</a></li>
+  </ul>
+</nav>
 
-<!-- Contenu de la page d'accueil ou de la page demandée -->
+<!-- Contenu de l'application (dynamique via router-outlet) -->
 <router-outlet></router-outlet>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 MonSiteWeb - Tous droits réservés</p>
+  <ul>
+    <li><a routerLink="/privacy-policy">Politique de confidentialité</a></li>
+    <li><a routerLink="/terms-of-service">Conditions d'utilisation</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+  </ul>
+</footer>
